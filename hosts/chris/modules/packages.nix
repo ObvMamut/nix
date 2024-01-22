@@ -25,6 +25,11 @@
       ollama
       udev
       wirelesstools
+      pulseaudioFull
+      playerctl
+      easyeffects
+      acpilight
+      pamixer
 
 
       # Monitoring

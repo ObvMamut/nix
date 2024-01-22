@@ -14,7 +14,11 @@
         sddm.enable = true;
         sddm.theme = "where-is-my-sddm-theme";
       };
-      windowManager.bspwm.enable = true;
+      windowManager.bspwm = {
+          enable = true;
+          configFile = "${../../../common/bspwm/bspwmrc}";
+          sxhkd.configFile = "${../../../common/bspwm/sxhkdrc}";
+        };
     }; 
     
   # GNOME
@@ -30,4 +34,6 @@
 
 
   programs.dconf.enable = true; 
+  programs.light.enable = true;
+
 }

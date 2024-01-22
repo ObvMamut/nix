@@ -7,14 +7,16 @@
 		./modules/hardware/hardware-configuration.nix
 		./modules/packages.nix
 		./modules/hardware/xserver.nix
-		./modules/hardware/sound.nix
+		../common/hardware/sound.nix
 		./modules/hardware/nvidia.nix
-		./modules/hardware/bluetooth.nix
-		./modules/services/power.nix
-		./modules/locale.nix
+		../common/hardware/bluetooth.nix
+		../common/configuration/power.nix
+		../common/configuration/printing.nix
+		../common/hardware/locale.nix
 		./modules/configuration/thunar.nix
 		./modules/configuration/steam.nix
 		./modules/users/mamut.nix
+		../common/packages.nix
 		inputs.home-manager.nixosModules.home-manager
 	];
 
@@ -36,13 +38,15 @@
 	xdg.portal.config.common.default = "gtk";
 	xdg.portal.enable = true;
 
-	services.printing.enable = true;
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	nixpkgs.config.permittedInsecurePackages = [
 		"electron-25.9.0"
 	];
+
+
+	
 
 	programs.zsh.enable = true;
 	users.defaultUserShell = pkgs.zsh;

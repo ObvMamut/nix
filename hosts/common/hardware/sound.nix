@@ -2,8 +2,9 @@
 
 {
 
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = false;
+  # hardware.pulseaudio.extraConfig = "load-module module-combine-sink";
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
